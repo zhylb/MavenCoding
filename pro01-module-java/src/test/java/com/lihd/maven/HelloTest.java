@@ -11,16 +11,13 @@ import org.junit.Test;
 public class HelloTest {
     @Test
     public void testSayHello() {
-        int a = 10;
         Hello hello = new Hello();
         hello.sayHello();
         hello.sayHello();
         hello.sayHello();
         hello.sayHello();
         hello.sayHello();
-        if (a > 10) {
-            System.out.println("a > 10");
-        }
+
 
         System.out.println("hot-fix");
         System.out.println("hot-fix");
