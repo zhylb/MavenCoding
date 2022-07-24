@@ -15,23 +15,5 @@ public class HelloTest {
     public void testSayHello() {
         Hello hello = new Hello();
         hello.sayHello();
-        hello.sayHello();
-        hello.sayHello();
-        hello.sayHello();
-        hello.sayHello();
-        System.out.println("main");
-        System.out.println("main");
-        System.out.println("main");
-
-        System.out.println("hot-fix");
-        System.out.println("hot-fix");
-        System.out.println("hot-fix");
-
-
-        try{
-            throw new IOException("222");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 }
