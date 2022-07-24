@@ -13,5 +13,8 @@ public class HelloTest {
         Hello hello = new Hello();
         hello.sayHello();
         hello.sayHello();
+        hello.sayHello();
+        hello.sayHello();
+        hello.sayHello();
     }
 }
