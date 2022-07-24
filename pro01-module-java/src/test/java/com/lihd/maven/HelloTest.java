@@ -12,5 +12,6 @@ public class HelloTest {
     public void testSayHello() {
         Hello hello = new Hello();
         hello.sayHello();
+        hello.sayHello();
     }
 }
