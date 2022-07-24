@@ -19,12 +19,16 @@ public class HelloTest {
         hello.sayHello();
         hello.sayHello();
         hello.sayHello();
-
+        System.out.println("main");
+        System.out.println("main");
+        System.out.println("main");
         try{
             throw new IOException("222");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+
 
     }
 }
