@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+            margin: 0px auto 0px auto;
+        }
+
+        table th, td {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        div {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span th:if="${session.emp.empPosition == 'emperor'}">恭请皇上圣安</span>
+    <span th:if="${session.emp.empPosition == 'minister'}">给<span th:text="${session.emp.empName}">XXX</span>大人请安</span>
+    <a th:href="@{/emp?method=logout}">退朝</a>
+
+
+</div>
+<p><a th:href="@{/work?method=renew}">重置信息</a></p>
+<table>
+    <thead>
+    <tr>
+        <th>奏折标题</th>
+        <th>内容摘要</th>
+        <th>上疏大臣</th>
+        <th>上疏时间</th>
+        <th>奏折状态</th>
+        <th>奏折详情</th>
+    </tr>
+    </thead>
+    <tbody th:if="${#lists.isEmpty(memorials)}">
+    <tr>
+        <td colspan="6">没有人上过折子</td>
+    </tr>
+    </tbody>
+    <tbody th:if="${not #lists.isEmpty(memorials)}">
+    <tr th:each="m : ${memorials}">
+        <td th:switch="${m.memorialsStatus}">
+            <span th:text="${m.memorialsTitle}" th:case="0" style="color: red;">奏折标题</span>
+            <span th:text="${m.memorialsTitle}" th:case="1" style="color: blue;">奏折标题</span>
+            <span th:text="${m.memorialsTitle}" th:case="2">奏折标题</span>
+        </td>
+        <td th:switch="${m.memorialsStatus}">
+            <span th:text="${m.memorialsContentDigest}" th:case="0" style="color: red;">内容摘要</span>
+            <span th:text="${m.memorialsContentDigest}" th:case="1" style="color: blue;">内容摘要</span>
+            <span th:text="${m.memorialsContentDigest}" th:case="2">内容摘要</span>
+        </td>
+        <td th:switch="${m.memorialsStatus}">
+            <span th:text="${m.memorialsEmpName}" th:case="0" style="color: red;">上疏大臣</span>
+            <span th:text="${m.memorialsEmpName}" th:case="1" style="color: blue;">上疏大臣</span>
+            <span th:text="${m.memorialsEmpName}" th:case="2">上疏大臣</span>
+        </td>
+        <td th:switch="${m.memorialsStatus}">
+            <span th:text="${m.memorialsCreateTime}" th:case="0" style="color: red;">上疏时间</span>
+            <span th:text="${m.memorialsCreateTime}" th:case="1" style="color: blue;">上疏时间</span>
+            <span th:text="${m.memorialsCreateTime}" th:case="2">上疏时间</span>
+        </td>
+        <td th:switch="${m.memorialsStatus}">
+            <span th:case="0" style="color: red;">未读</span>
+            <span th:case="1" style="color: blue;">已读</span>
+            <span th:case="2">已批示</span>
+        </td>
+
+        <td>
+            <a th:href="@{/work(id=${m.memorialsId},method='info')}">奏折详情</a>
+        </td>
+    </tr>
+    </tbody>
+
+
+
+</table>
+</body>
+</html>
