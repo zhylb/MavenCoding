@@ -12,12 +12,6 @@ public class HelloTest {
     @Test
     public void testSayHello() {
         Hello hello = new Hello();
-        hello.sayHello();
-        hello.sayHello();
-        hello.sayHello();
-        hello.sayHello();
-        hello.sayHello();
-
 
         System.out.println("hot-fix");
         System.out.println("hot-fix");
