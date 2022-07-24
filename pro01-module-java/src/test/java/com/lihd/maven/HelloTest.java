@@ -13,6 +13,7 @@ import java.io.IOException;
 public class HelloTest {
     @Test
     public void testSayHello() {
+
         Hello hello = new Hello();
         hello.sayHello();
     }
