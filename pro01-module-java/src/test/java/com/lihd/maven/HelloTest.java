@@ -22,13 +22,16 @@ public class HelloTest {
         System.out.println("main");
         System.out.println("main");
         System.out.println("main");
+
+        System.out.println("hot-fix");
+        System.out.println("hot-fix");
+        System.out.println("hot-fix");
+
+
         try{
             throw new IOException("222");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
-
     }
 }
